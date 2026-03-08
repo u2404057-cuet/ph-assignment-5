@@ -78,6 +78,41 @@
     <section id="job-container" class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 p-6 gap-3 bg-base-200 shadow rounded-2xl">
     </section>
 
+        <!-- Open the modal using ID.showModal() method -->
+    <button class="btn" onclick="my_modal.showModal()">open modal</button>
+    <dialog id="my_modal" class="modal modal-bottom sm:modal-middle">
+    <div class="modal-box">
+        <div id="detail-box" class="space-y-3">
+            <h1 class="font-bold text-2xl">Fix broken image uploads</h1>
+            <ul class="flex gap-5 text-[10px] items-center">
+                <li class="bg-green-400 py-1 px-5 rounded-full text-white">Opened</li>
+                <li class="list-disc">Opened by Fahim Ahmed</li>
+                <li class="list-disc">22/02/2026</li>
+            </ul>
+            <div class="">
+
+            </div>
+            <p class="text-[#64748B]">The navigation menu doesn't collapse properly on mobile devices. Need to fix the responsive behavior.</p>
+            <div class="flex bg-base-200 p-4">
+                <div class="flex-1 space-y-2">
+                    <p class="">Assignee:</p>
+                    <p class="font-semibold">Fahim Ahmed</p>
+                </div>
+                <div class="flex-1 space-y-2">
+                    <p class="">Priority:</p>
+                    <span class="bg-red-400 py-1 px-5 rounded-full">High</span>
+                </div>
+            </div>
+        </div>
+        <div class="modal-action">
+        <form method="dialog">
+            <!-- if there is a button in form, it will close the modal -->
+            <button class="btn btn-primary">Close</button>
+        </form>
+        </div>
+    </div>
+    </dialog>
+
     <script src="./script/machine.js"></script>
     <script src="./script/login.js"></script>
     <script src="./script/allTab.js"></script>

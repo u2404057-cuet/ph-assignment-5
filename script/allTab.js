@@ -21,9 +21,8 @@ const displayAllJobs = (jobs) => {
     for(const job of jobs){
         const newCard = document.createElement('div');
 
-
         newCard.innerHTML = `
-        <div class="job-card p-4 bg-base-100 h-full rounded-2xl border-t-4 border-[${borderColor(job.status)}] shadow ${job.status}">
+        <div onclick="loadJobDetails(${job.id})" class="job-card p-4 bg-base-100 h-full rounded-2xl border-t-4 border-[${borderColor(job.status)}] shadow ${job.status}">
             <div class="flex justify-between items-center mb-4">
                 <div>
                     <img src="./assets/${job.status}-Status.png" alt="">
@@ -54,5 +53,38 @@ const displayAllJobs = (jobs) => {
     }
 
 
+}
+function loadJobDetails(id){
+    const url = `https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`;
+
+    fetch(url)
+    .then(res => res.json())
+    .then(details => displayJobDetails(details.data))
+}
+
+function displayJobDetails(job){
+    const detailBox = document.getElementById('detail-box');
+    detailBox.innerHTML =`
+    <h1 class="font-bold text-2xl">${job.title}</h1>
+            <ul class="flex gap-5 text-[10px] items-center">
+                <li class="bg-${job.status == "open" ? 'green' : 'red'}-400 py-1 px-5 rounded-full text-white">${job.status == "open" ? "Opened" : "Closed"}</li>
+                <li class="list-disc">Opened by ${job.author}</li>
+                <li class="list-disc">${job.createdAt.slice(0, -10)}</li>
+            </ul>
+            <div class="">
+                ${createLabels(job.labels)}
+            </div>
+            <p class="text-[#64748B]">${job.description}</p>
+            <div class="flex bg-base-200 p-4">
+                <div class="flex-1 space-y-2">
+                    <p class="">Assignee:</p>
+                    <p class="font-semibold">${job.assignee || "Assingee Unassigned"}</p>
+                </div>
+                <div class="flex-1 space-y-2">
+                    <p class="">Priority:</p>
+                    <p class="text-[${textColor(job.priority)}] inline-block py-1 px-5 rounded-full bg-[${bgColor(job.priority)}]">${job.priority.toUpperCase()}</p>
+                </div>
+    `;
+    document.getElementById('my_modal').showModal();
 }
 loadAllJobs();

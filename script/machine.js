@@ -76,3 +76,4 @@ document.getElementById('search-btn').addEventListener('click', () => {
     .then(res => res.json())
     .then(json => displayAllJobs(json.data));
 })
+
