@@ -3,9 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Issue Tracker</title>
+    <!-- font awsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- daisy UI & tailwind -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css">
 </head>
-<body>
-    <h1>hi</h1>
+<body class="h-screen bg-base-200">
+    <header class="mb-16 bg-base-100">
+        <nav class="flex justify-between items-center flex-col gap-4 p-5 sm:flex-row">
+            <div class="flex flex-col items-center sm:flex-row gap-2">
+                <div class="w-[50px] sm:w-[36px]">
+                    <img src="./assets/github-logo.png" alt="">
+                </div>
+                <h1 class="font-bold text-2xl text-center">GitHub Issues Tracker</h1>
+            </div>
+            <div class="flex gap-4">
+                <label class="input">
+                    <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                      <g
+                        stroke-linejoin="round"
+                        stroke-linecap="round"
+                        stroke-width="2.5"
+                        fill="none"
+                        stroke="currentColor"
+                      >
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.3-4.3"></path>
+                      </g>
+                    </svg>
+                    <input type="search" required placeholder="Search" />
+                </label>
+                <button class="btn btn-primary">New Issue</button>
+            </div>
+        </nav>
+    </header>
+
+    <section id="tabs" class="container mx-auto bg-base-100 p-6 rounded-2xl shadow space-x-2 mb-8">
+        <button class="btn btn-primary">All</button>
+        <button class="btn btn-primary btn-outline">Open</button>
+        <button class="btn btn-primary btn-outline">Closed</button>
+    </section>
+
+    <section id="jobs" class="container mx-auto flex justify-between items-center p-6 rounded-2xl shadow bg-base-100">
+        <div id="job-tracker" class="flex items-center gap-2">
+            <div class="p-3 rounded-full bg-[#ECE4FF]">
+                <img src="./assets/Aperture.png" alt="">
+            </div>
+            <div class="">
+                <h1 id="job-count" class="font-semibold text-xl"><span>50</span> Issues</h1>
+                <p class="text-[#64748B]">Track and manage your project issues</p>
+            </div>
+        </div>
+        <div class="flex gap-3">
+            <div class="">
+                <img src="./assets/Open-Status.png" alt="">
+            </div>
+            <p>Open</p>
+            <div class="">
+                <img src="./assets/Closed- Status .png" alt="">
+            </div>
+            <p>Closed</p>
+        </div>
+    </section>
+    
+    <section id="job-container" class="container mx-auto grid grid-cols-4">
+        <div class="job-card">
+            <div id="job-status" class="flex justify-between">
+                <div id="status-img">
+                    <img src="./assets/Open-Status.png" alt="">
+                </div>
+                <p class="text-[#EF4444] py-1 px-5 rounded-full bg-[#FEECEC]">High</p>
+            </div>
+            <div class="">
+                <h1 class="">Fix navigation menu on mobile devices</h1>
+                <p class="">The navigation menu doesn't collapse properly on mobile devices...</p>
+                <div class="">
+                    <p class="text-[#EF4444] py-1 px-5 rounded-full bg-[#FEECEC]">High</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="./script/login.js"></script>
 </body>
 </html>
