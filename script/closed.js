@@ -1,7 +1,7 @@
 document.getElementById('closed-tab-btn').addEventListener('click', () => {
     toggleBtn('closed-tab-btn');
 
-    const closed = allJobs.filter(job => job.status == "open");
-    displayAllJobs(openJobs);
-    setJobCount(openJobs);
+    const closedJobs = allJobs.filter(job => job.status == "closed");
+    displayAllJobs(closedJobs);
+    setJobCount(closedJobs);
 })
