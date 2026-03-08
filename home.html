@@ -48,7 +48,7 @@
     </header>
 
     <section id="tabs" class="container mx-auto bg-base-100 p-6 rounded-2xl shadow space-x-2 mb-4">
-        <button onclick="loadAllJobs('all-tab-btn')" id="all-tab-btn" class="btn btn-primary">All</button>
+        <button onclick="loadAllJobs()" id="all-tab-btn" class="btn btn-primary">All</button>
         <button id="open-tab-btn" class="btn btn-primary btn-outline">Open</button>
         <button id="closed-tab-btn" class="btn btn-primary btn-outline">Closed</button>
     </section>
@@ -76,32 +76,6 @@
     </section>
     
     <section id="job-container" class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 p-6 gap-3 bg-base-200 shadow rounded-2xl">
-        <div class="job-card p-4 bg-base-100 rounded-2xl border-t-4 border-green-500 shadow">
-            <div id="job-status" class="flex justify-between items-center mb-4">
-                <div id="status-img">
-                    <img src="./assets/open-Status.png" alt="">
-                </div>
-                <p class="text-[#EF4444] py-1 px-5 rounded-full bg-[#FEECEC]">High</p>
-            </div>
-            <div class="space-y-3 border-b-2 border-gray-200 pb-4">
-                <h1 class="font-semibold text-lg">Fix navigation menu on mobile devices</h1>
-                <p class="text-sm text-[#64748B]">The navigation menu doesn't collapse properly on mobile devices...</p>
-                <div class="flex gap-2">
-                    <p class="text-[#EF4444] py-1 px-5 rounded-full bg-[#FEECEC]">High</p>
-                    <p class="text-[#D97706] py-1 px-5 rounded-full bg-[#FFF8DB]">help wanted</p>
-                </div>
-            </div>
-            <div class="p-4">
-                <div class="flex justify-between">
-                    <p class="text-[#64748B]">#1 by john_doe</p>
-                    <p class="text-[#64748B]">1/15/2024</p>
-                </div>
-                <div class="flex justify-between">
-                    <p class="text-[#64748B]">#1 by john_doe</p>
-                    <p class="text-[#64748B]">1/15/2024</p>
-                </div>
-            </div>
-        </div>
     </section>
 
     <script src="./script/login.js"></script>

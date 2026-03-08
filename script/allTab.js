@@ -1,4 +1,4 @@
-const loadAllJobs = (tab) => {
+const loadAllJobs = () => {
 
     const url = "https://phi-lab-server.vercel.app/api/v1/lab/issues";
 
@@ -50,3 +50,4 @@ const displayAllJobs = (jobs) => {
 
 
 }
+loadAllJobs();
