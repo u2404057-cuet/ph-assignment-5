@@ -67,3 +67,12 @@ function giveLabel(label){
 
     }
 }
+
+document.getElementById('search-btn').addEventListener('click', () => {
+    const searchValue = document.getElementById('search-input').value;
+    const url = `https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchValue}`;
+
+    fetch(url)
+    .then(res => res.json())
+    .then(json => displayAllJobs(json.data));
+})
