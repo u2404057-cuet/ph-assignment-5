@@ -53,7 +53,7 @@
         <button class="btn btn-primary btn-outline">Closed</button>
     </section>
 
-    <section id="jobs" class="container mx-auto flex justify-between items-center p-6 rounded-2xl shadow bg-base-100">
+    <section id="jobs" class="container mx-auto flex justify-between items-center p-6 rounded-2xl shadow bg-base-100 mb-7">
         <div id="job-tracker" class="flex items-center gap-2">
             <div class="p-3 rounded-full bg-[#ECE4FF]">
                 <img src="./assets/Aperture.png" alt="">
@@ -75,20 +75,25 @@
         </div>
     </section>
     
-    <section id="job-container" class="container mx-auto grid grid-cols-4">
-        <div class="job-card">
-            <div id="job-status" class="flex justify-between">
+    <section id="job-container" class="container mx-auto grid grid-cols-4 p-6 gap-3 bg-base-200 shadow rounded-2xl">
+        <div class="job-card p-4 bg-base-100 rounded-2xl border-t-4 border-green-500 shadow">
+            <div id="job-status" class="flex justify-between items-center mb-4">
                 <div id="status-img">
                     <img src="./assets/Open-Status.png" alt="">
                 </div>
                 <p class="text-[#EF4444] py-1 px-5 rounded-full bg-[#FEECEC]">High</p>
             </div>
-            <div class="">
-                <h1 class="">Fix navigation menu on mobile devices</h1>
-                <p class="">The navigation menu doesn't collapse properly on mobile devices...</p>
-                <div class="">
+            <div class="space-y-3 border-b-2 border-gray-200 pb-4">
+                <h1 class="font-semibold text-lg">Fix navigation menu on mobile devices</h1>
+                <p class="text-sm text-[#64748B]">The navigation menu doesn't collapse properly on mobile devices...</p>
+                <div class="flex gap-2">
                     <p class="text-[#EF4444] py-1 px-5 rounded-full bg-[#FEECEC]">High</p>
+                    <p class="text-[#D97706] py-1 px-5 rounded-full bg-[#FFF8DB]">help wanted</p>
                 </div>
+            </div>
+            <div class="p-4">
+                <p class="text-[#64748B]">#1 by john_doe</p>
+                <p class="text-[#64748B]">1/15/2024</p>
             </div>
         </div>
     </section>
