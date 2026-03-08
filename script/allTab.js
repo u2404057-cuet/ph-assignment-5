@@ -82,7 +82,7 @@ function displayJobDetails(job){
                 </div>
                 <div class="flex-1 space-y-2">
                     <p class="">Priority:</p>
-                    <p class="text-[${textColor(job.priority)}] inline-block py-1 px-5 rounded-full bg-[${bgColor(job.priority)}]">${job.priority.toUpperCase()}</p>
+                    <p class="text-[${textColor(job.priority)}] text-[12px] inline-block py-1 px-5 rounded-full bg-[${bgColor(job.priority)}]">${job.priority.toUpperCase()}</p>
                 </div>
     `;
     document.getElementById('my_modal').showModal();
