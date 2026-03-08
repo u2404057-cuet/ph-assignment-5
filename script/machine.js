@@ -4,6 +4,13 @@ function setJobCount(jobs) {
     jobCount.innerText = length;
 }
 
+function toggleBtn(tab){
+    document.getElementById('all-tab-btn').classList.add('btn-outline');
+    document.getElementById('open-tab-btn').classList.add('btn-outline');
+    document.getElementById('closed-tab-btn').classList.add('btn-outline');
+    document.getElementById(tab).classList.remove('btn-outline');
+}
+
 function textColor(type){
     if(type == 'high'){
         return "#EF4444";

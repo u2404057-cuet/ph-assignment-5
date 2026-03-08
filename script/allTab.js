@@ -1,10 +1,15 @@
+let allJobs = [];
 const loadAllJobs = () => {
 
+    toggleBtn('all-tab-btn');
     const url = "https://phi-lab-server.vercel.app/api/v1/lab/issues";
 
     fetch(url)
     .then(res => res.json())
-    .then(data => displayAllJobs(data.data));
+    .then(data => {
+        allJobs = data.data;
+        displayAllJobs(data.data);
+    });
 }
 
 const displayAllJobs = (jobs) => {
@@ -18,7 +23,7 @@ const displayAllJobs = (jobs) => {
 
 
         newCard.innerHTML = `
-        <div class="job-card p-4 bg-base-100 h-full rounded-2xl border-t-4 border-[${borderColor(job.status)}] shadow">
+        <div class="job-card p-4 bg-base-100 h-full rounded-2xl border-t-4 border-[${borderColor(job.status)}] shadow ${job.status}">
             <div class="flex justify-between items-center mb-4">
                 <div>
                     <img src="./assets/${job.status}-Status.png" alt="">
