@@ -77,3 +77,15 @@ document.getElementById('search-btn').addEventListener('click', () => {
     .then(json => displayAllJobs(json.data));
 })
 
+const manageSpinner = (status) => {
+    
+    if(status){
+        document.getElementById('spinner').classList.remove('hidden');
+        document.getElementById('all-container').classList.add('hidden');
+    }
+    else{
+        document.getElementById('spinner').classList.add('hidden');
+        document.getElementById('all-container').classList.remove('hidden');
+    }
+}
+

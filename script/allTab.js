@@ -2,6 +2,7 @@ let allJobs = [];
 const loadAllJobs = () => {
 
     toggleBtn('all-tab-btn');
+    manageSpinner(true);
     const url = "https://phi-lab-server.vercel.app/api/v1/lab/issues";
 
     fetch(url)
@@ -51,8 +52,7 @@ const displayAllJobs = (jobs) => {
 
         jobContainer.append(newCard);
     }
-
-
+    manageSpinner(false);
 }
 function loadJobDetails(id){
     const url = `https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`;

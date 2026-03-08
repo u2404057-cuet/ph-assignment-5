@@ -17,7 +17,7 @@
 
     <link rel="stylesheet" href="./style.css">
 </head>
-<body class="h-screen bg-base-200">
+<body class="h-full bg-base-200 pb-10">
     <header class="mb-8 bg-base-100">
         <nav class="flex justify-between items-center flex-col gap-4 p-5 sm:flex-row">
             <div class="flex flex-col items-center sm:flex-row gap-2">
@@ -42,7 +42,7 @@
                     </svg>
                     <input id="search-input" type="search" required placeholder="Search" />
                 </label>
-                <button id="search-btn" class="btn btn-primary">New Issue</button>
+                <button id="search-btn" class="btn btn-primary"><i class="fa-solid fa-plus"></i>New Issue</button>
             </div>
         </nav>
     </header>
@@ -53,33 +53,40 @@
         <button id="closed-tab-btn" class="btn btn-primary btn-outline">Closed</button>
     </section>
 
-    <section id="jobs" class="container mx-auto flex flex-col sm:flex-row items-start justify-between sm:items-center gap-4 p-6 rounded-2xl shadow bg-base-100 mb-4">
-        <div id="job-tracker" class="flex items-center gap-2">
-            <div class="p-3 rounded-full bg-[#ECE4FF]">
-                <img src="./assets/Aperture.png" alt="">
-            </div>
-            <div class="">
-                <h1 class="font-semibold text-xl"><span id="job-count">1</span> Issues</h1>
-                <p class="text-[#64748B]">Track and manage your project issues</p>
-            </div>
-        </div>
-        <div class="flex gap-3">
-            <div class="">
-                <img src="./assets/open-Status.png" alt="">
-            </div>
-            <p>Open</p>
-            <div class="">
-                <img src="./assets/closed-Status.png" alt="">
-            </div>
-            <p>Closed</p>
-        </div>
+    <section id="spinner" class="flex justify-center items-center">
+        <span class="loading loading-spinner loading-xl"></span>
     </section>
-    
-    <section id="job-container" class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 p-6 gap-3 bg-base-200 shadow rounded-2xl">
+
+    <section id="all-container">
+
+        <section id="jobs" class="container mx-auto flex flex-col sm:flex-row items-start justify-between sm:items-center gap-4 p-6 rounded-2xl shadow bg-base-100 mb-4">
+            <div id="job-tracker" class="flex items-center gap-2">
+                <div class="p-3 rounded-full bg-[#ECE4FF]">
+                    <img src="./assets/Aperture.png" alt="">
+                </div>
+                <div class="">
+                    <h1 class="font-semibold text-xl"><span id="job-count">1</span> Issues</h1>
+                    <p class="text-[#64748B]">Track and manage your project issues</p>
+                </div>
+            </div>
+            <div class="flex gap-3">
+                <div class="">
+                    <img src="./assets/open-Status.png" alt="">
+                </div>
+                <p>Open</p>
+                <div class="">
+                    <img src="./assets/closed-Status.png" alt="">
+                </div>
+                <p>Closed</p>
+            </div>
+        </section>
+        
+        <section id="job-container" class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 p-6 gap-3 bg-base-200 shadow rounded-2xl">
+        </section>
+
     </section>
 
         <!-- Open the modal using ID.showModal() method -->
-    <button class="btn" onclick="my_modal.showModal()">open modal</button>
     <dialog id="my_modal" class="modal modal-bottom sm:modal-middle">
     <div class="modal-box">
         <div id="detail-box" class="space-y-3">
@@ -106,7 +113,6 @@
         </div>
         <div class="modal-action">
         <form method="dialog">
-            <!-- if there is a button in form, it will close the modal -->
             <button class="btn btn-primary">Close</button>
         </form>
         </div>
